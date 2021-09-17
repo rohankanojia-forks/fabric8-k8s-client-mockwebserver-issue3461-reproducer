@@ -41,7 +41,7 @@ class PodCrudTest {
         client.pods().inNamespace("ns3").create(pod3);
 
         // When
-        client.pods().delete();
+        client.pods().inAnyNamespace().delete();
         PodList ns1Pods = client.pods().inNamespace("ns1").list();
         PodList ns2Pods = client.pods().inNamespace("ns2").list();
         PodList ns3Pods = client.pods().inNamespace("ns3").list();
